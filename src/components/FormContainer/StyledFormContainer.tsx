@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-import { animationDivForm } from "../animationDivForm";
+import { animationDivForm } from "./animationDivForm";
+import { animationDivForm653px } from "./animationDivForm653px";
+import { animationDivForm915px } from "./animationDivForm915px";
 
 type StyledFormContainerProps = {
   readonly animation?: boolean;
@@ -24,4 +26,18 @@ export const StyledFormContainer = styled.div`
   animation: ${({ animation }: StyledFormContainerProps) =>
       animation ? animationDivForm : ""}
     1.1s linear 1;
+  @media (max-height: 915px) {
+    margin-top: ${({ animation }: StyledFormContainerProps) =>
+      animation ? "350%" : 0};
+    animation: ${({ animation }: StyledFormContainerProps) =>
+        animation ? animationDivForm915px : ""}
+      1.1s linear 1;
+  }
+  @media (max-height: 653px) {
+    margin-top: ${({ animation }: StyledFormContainerProps) =>
+      animation ? "450%" : 0};
+    animation: ${({ animation }: StyledFormContainerProps) =>
+        animation ? animationDivForm653px : ""}
+      1.1s linear 1;
+  }
 `;
